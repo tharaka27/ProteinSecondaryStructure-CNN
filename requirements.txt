@@ -1,5 +1,5 @@
 # pip requirements
-numpy==1.18.4
+numpy
 #sklearn==0.19.1
 scikit-learn
 tensorflow
