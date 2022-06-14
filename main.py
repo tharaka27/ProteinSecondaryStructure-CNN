@@ -33,7 +33,7 @@ filtered = is_filtered()
 
 do_log = True
 stop_early = False
-show_plots = True
+show_plots = False
 
 start_time = timer()
 

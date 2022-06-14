@@ -1,6 +1,7 @@
 # pip requirements
 numpy==1.18.4
-sklearn==0.19.1
+#sklearn==0.19.1
+scikit-learn
 tensorflow-gpu==1.15.4
 keras==2.3.1
 matplotlib==2.1.1

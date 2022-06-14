@@ -42,7 +42,7 @@ total_features = 57
 amino_acid_residues = 21
 num_classes = 8
 
-cnn_width = 17
+cnn_width = int(os.environ.get('CNN_WIDTH', 17))
 
 ##
 ## @brief      Determines if filtered dataset is used.
