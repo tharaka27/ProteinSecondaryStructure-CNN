@@ -26,7 +26,7 @@ from keras import optimizers, callbacks
 from timeit import default_timer as timer
 from dataset import get_dataset_reshaped, split_dataset, get_resphaped_dataset_paper, get_cb513
 import model
-
+import os
 import pickle
 
 filtered = is_filtered()
@@ -88,7 +88,8 @@ CB_x, CB_y = get_cb513()
 cb_scores = net.evaluate(CB_x, CB_y)
 print("CB513 -- Loss: " + str(cb_scores[0]) + ", Accuracy: " + str(cb_scores[1]) + ", MAE: " + str(cb_scores[2]))
 
-pickle_out = open("lasthistory.pickle","wb")
+name = os.environ.get('CNN_WIDTH', 17) + "lasthistory.pickle"
+pickle_out = open(name,"wb")
 pickle.dump(history, pickle_out)
 pickle_out.close()
 

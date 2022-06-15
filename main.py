@@ -77,20 +77,24 @@ history = net.fit(X_train, Y_train, epochs=model.nn_epochs, batch_size=model.bat
 end_time = timer()
 print("\n\nTime elapsed: " + "{0:.2f}".format((end_time - start_time)) + " s")
 
-scores = net.evaluate(X_test, Y_test)
-print("Loss: " + str(scores[0]) + ", Accuracy: " + str(scores[1]) + ", MAE: " + str(scores[2]))
+#scores = net.evaluate(X_test, Y_test)
+#print("Loss: " + str(scores[0]) + ", Accuracy: " + str(scores[1]) + ", MAE: " + str(scores[2]))
 #print(scores)
 
-CB_x, CB_y = get_cb513()
+#CB_x, CB_y = get_cb513()
 
-cb_scores = net.evaluate(CB_x, CB_y)
-print("CB513 -- Loss: " + str(cb_scores[0]) + ", Accuracy: " + str(cb_scores[1]) + ", MAE: " + str(cb_scores[2]))
+#cb_scores = net.evaluate(CB_x, CB_y)
+#print("CB513 -- Loss: " + str(cb_scores[0]) + ", Accuracy: " + str(cb_scores[1]) + ", MAE: " + str(cb_scores[2]))
 
-pickle_out = open("lasthistory.pickle","wb")
-pickle.dump(history, pickle_out)
-pickle_out.close()
+name = os.environ.get('CNN_WIDTH', 17) + "lasthistory.pickle"
+#pickle_out = open(name,"wb")
+#pickle.dump(history, pickle_out)
+#pickle_out.close()
 
-if show_plots:
-    from plot_history import plot_history
-    plot_history(history)
+
+model.save(name) 
+
+#if show_plots:
+#    from plot_history import plot_history
+#    plot_history(history)
 
