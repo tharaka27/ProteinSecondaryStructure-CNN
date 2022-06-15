@@ -86,7 +86,8 @@ print("\n\nTime elapsed: " + "{0:.2f}".format((end_time - start_time)) + " s")
 #cb_scores = net.evaluate(CB_x, CB_y)
 #print("CB513 -- Loss: " + str(cb_scores[0]) + ", Accuracy: " + str(cb_scores[1]) + ", MAE: " + str(cb_scores[2]))
 
-name = os.environ.get('CNN_WIDTH', 17) + "lasthistory.pickle"
+#name = os.environ.get('CNN_WIDTH', 17) + "lasthistory.pickle"
+name = "lasthistory" + os.environ.get('CNN_WIDTH', 17) + ".h5"
 #pickle_out = open(name,"wb")
 #pickle.dump(history, pickle_out)
 #pickle_out.close()
