@@ -26,6 +26,8 @@ from keras import optimizers, callbacks
 from timeit import default_timer as timer
 from dataset import get_dataset_reshaped, split_dataset, get_resphaped_dataset_paper, get_cb513, is_filtered
 import model
+import os
+from random import randrange
 
 import pickle
 
@@ -87,13 +89,13 @@ print("\n\nTime elapsed: " + "{0:.2f}".format((end_time - start_time)) + " s")
 #print("CB513 -- Loss: " + str(cb_scores[0]) + ", Accuracy: " + str(cb_scores[1]) + ", MAE: " + str(cb_scores[2]))
 
 #name = os.environ.get('CNN_WIDTH', 17) + "lasthistory.pickle"
-name = "lasthistory" + os.environ.get('CNN_WIDTH', 17) + ".h5"
+name = "lasthistory" + os.environ.get('CNN_WIDTH', str(randrange(100))) + ".h5"
 #pickle_out = open(name,"wb")
 #pickle.dump(history, pickle_out)
 #pickle_out.close()
 
 
-model.save(name) 
+net.save(name) 
 
 #if show_plots:
 #    from plot_history import plot_history

@@ -1,5 +1,5 @@
 echo "Set environment variables"
-export NUM_EPOCHS=1
+export NUM_EPOCHS=10
 echo "--------------------------------------------------------------"
 export CNN_WIDTH=11
 python3 main.py
